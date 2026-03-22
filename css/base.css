@@ -3,7 +3,8 @@ body {
   color: var(--gris);
   font-family: var(--texto);
   overflow-x: hidden;
-  cursor: none;
+  cursor: auto;
+}
 }
 
 section { position: relative; z-index: 1; }
