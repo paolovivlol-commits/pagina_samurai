@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Samurai</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/secciones.css">
+  <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+
+  <!-- cursor personalizado -->
+  <div id="cursor"></div>
+  <div id="cursor-trail"></div>
+
+  <!-- nav -->
+  <nav id="nav">
+    <div class="logo">侍 SAMURAI</div>
+    <button class="hamburguesa" aria-label="menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <ul class="menu">
+      <li><a href="#sobre">Guerrero</a></li>
+      <li><a href="#katanas">Katanas</a></li>
+      <li><a href="#galeria">Galería</a></li>
+      <li><a href="#historia">Historia</a></li>
+    </ul>
+  </nav>
+
+  <!-- hero -->
+  <section id="hero">
+    <img src="assets/menu.png" alt="ninja samurai" class="foto-fondo">
+    <div class="oscurecer"></div>
+    <div class="texto-hero">
+      <p class="subtitulo">// el camino del guerrero</p>
+      <h1 class="titulo-hero">
+        <span class="linea-1">EL FILO</span><br>
+        <span class="linea-2">NO PERDONA</span><br>
+        <span class="linea-3 rojo">LA DUDA</span>
+      </h1>
+      <p class="desc">Desde el Japón feudal hasta hoy, el código del samurai sigue siendo la guía de los que no se rinden.</p>
+    </div>
+    <div class="bajar">↓ scroll</div>
+    <!-- icono svg katana decorativo -->
+    <img src="assets/katana.svg" alt="" class="icono-katana">
+    <div class="linea-lateral"></div>
+  </section>
+
+  <!-- samurai a caballo -->
+  <section id="sobre">
+    <div class="dos-columnas">
+      <div class="columna-foto">
+        <img src="assets/samurai.png" alt="estatua samurai">
+        <div class="foto-overlay"></div>
+      </div>
+      <div class="columna-texto reveal">
+        <p class="etiqueta">// el guerrero</p>
+        <h2 class="titulo-seccion">NACIDO PARA<br><span>LA BATALLA</span></h2>
+        <p>Los samurai surgieron en el Japón del siglo XII como guerreros al servicio de los señores feudales. Durante siglos dominaron no solo los campos de batalla sino también la cultura y la política japonesa.</p>
+        <p>Su código, el Bushido, fue más que reglas de combate. Una filosofía de vida que moldeó a generaciones enteras de guerreros que preferían morir con honor.</p>
+        <div class="linea-deco"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- carrusel de katanas -->
+  <section id="katanas">
+    <p class="etiqueta centrado">// las katanas</p>
+    <h2 class="titulo-seccion centrado">ELIGE TU<br><span>ELEMENTO</span></h2>
+
+    <div class="carrusel-wrap">
+      <button class="btn-nav btn-prev" onclick="moverCarrusel(-1)">&#8592;</button>
+
+      <div class="carrusel">
+        <div class="slide activo" data-color="#ff4400">
+          <div class="slide-glow" style="background: radial-gradient(circle, rgba(255,80,0,0.3) 0%, transparent 70%)"></div>
+          <img src="assets/ktnfuego.png" alt="katana de fuego">
+          <div class="slide-info">
+            <h3>Katana de Fuego</h3>
+            <p>Forjada en las llamas del infierno. Quema todo lo que toca.</p>
+          </div>
+        </div>
+        <div class="slide" data-color="#0088ff">
+          <div class="slide-glow" style="background: radial-gradient(circle, rgba(0,136,255,0.3) 0%, transparent 70%)"></div>
+          <img src="assets/kntagua.png" alt="katana de agua">
+          <div class="slide-info">
+            <h3>Katana de Agua</h3>
+            <p>Fluye como el río pero corta como el océano en tormenta.</p>
+          </div>
+        </div>
+        <div class="slide" data-color="#00ccff">
+          <div class="slide-glow" style="background: radial-gradient(circle, rgba(0,200,255,0.3) 0%, transparent 70%)"></div>
+          <img src="assets/ktnhielo.png" alt="katana de hielo">
+          <div class="slide-info">
+            <h3>Katana de Hielo</h3>
+            <p>Congela la sangre del enemigo con un solo roce.</p>
+          </div>
+        </div>
+        <div class="slide" data-color="#44ff00">
+          <div class="slide-glow" style="background: radial-gradient(circle, rgba(80,255,0,0.3) 0%, transparent 70%)"></div>
+          <img src="assets/ktnacido.png" alt="katana de acido">
+          <div class="slide-info">
+            <h3>Katana de Ácido</h3>
+            <p>Corroe todo lo que toca. No hay armadura que la detenga.</p>
+          </div>
+        </div>
+      </div>
+
+      <button class="btn-nav btn-next" onclick="moverCarrusel(1)">&#8594;</button>
+    </div>
+
+    <div class="puntos">
+      <span class="punto activo" onclick="irA(0)"></span>
+      <span class="punto" onclick="irA(1)"></span>
+      <span class="punto" onclick="irA(2)"></span>
+      <span class="punto" onclick="irA(3)"></span>
+    </div>
+  </section>
+
+  <!-- numeros -->
+  <section id="numeros">
+    <div class="numero reveal"><div class="num">700<span>+</span></div><div class="num-texto">Años de historia</div></div>
+    <div class="numero reveal"><div class="num">7</div><div class="num-texto">Virtudes del Bushido</div></div>
+    <div class="numero reveal"><div class="num">1</div><div class="num-texto">Código de honor</div></div>
+    <div class="numero reveal"><div class="num">0</div><div class="num-texto">Concesiones</div></div>
+  </section>
+
+  <!-- galeria -->
+  <section id="galeria">
+    <div class="img-grande">
+      <img src="assets/honor_y_sombra.png" alt="samurai y ninja" class="parallax-img">
+      <div class="texto-encima">
+        <p class="etiqueta reveal-texto">// honor y sombra</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- bushido -->
+  <section id="bushido">
+    <p class="etiqueta centrado">// bushido</p>
+    <h2 class="titulo-seccion centrado">EL CÓDIGO<br><span>DE HONOR</span></h2>
+    <div class="cajitas">
+      <div class="caja reveal"><div class="kanji">義</div><h3>Justicia</h3><p>Actuar con rectitud sin importar las consecuencias personales.</p></div>
+      <div class="caja reveal"><div class="kanji">勇</div><h3>Valentía</h3><p>El samurai no teme a la muerte porque vive cada día habiéndola aceptado.</p></div>
+      <div class="caja reveal"><div class="kanji">仁</div><h3>Benevolencia</h3><p>El poder sin compasión es tiranía. El guerrero protege a los débiles.</p></div>
+      <div class="caja reveal"><div class="kanji">礼</div><h3>Respeto</h3><p>Tratar a todos con cortesía, incluso a los enemigos.</p></div>
+      <div class="caja reveal"><div class="kanji">誠</div><h3>Honestidad</h3><p>La palabra del samurai es su contrato. No necesita papel ni testigos.</p></div>
+      <div class="caja reveal"><div class="kanji">名</div><h3>Honor</h3><p>El honor no se negocia. Una vez perdido solo el sacrificio puede restaurarlo.</p></div>
+    </div>
+  </section>
+
+  <!-- historia -->
+  <section id="historia">
+    <div class="historia-wrap">
+      <div class="historia-izq reveal">
+        <p class="etiqueta">// historia</p>
+        <h2 class="titulo-seccion">MÁS DE 700<br><span>AÑOS</span></h2>
+        <img src="assets/katana.png" alt="katana" class="katana-deco">
+      </div>
+      <div class="historia-der">
+        <div class="evento reveal">
+          <div class="anio">1185</div>
+          <div class="evento-info"><h4>Periodo Kamakura</h4><p>Nace la primera clase samurai organizada bajo el shogunato.</p></div>
+        </div>
+        <div class="evento reveal">
+          <div class="anio">1603</div>
+          <div class="evento-info"><h4>Periodo Edo</h4><p>Los samurai alcanzan su máximo poder político y cultural.</p></div>
+        </div>
+        <div class="evento reveal">
+          <div class="anio">1868</div>
+          <div class="evento-info"><h4>Era Meiji</h4><p>El gobierno abolió formalmente la clase samurai.</p></div>
+        </div>
+        <div class="evento reveal">
+          <div class="anio">Hoy</div>
+          <div class="evento-info"><h4>Legado eterno</h4><p>El Bushido sigue inspirando a millones en todo el mundo.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="pie-logo">侍</div>
+    <p class="pie-frase">"El honor no se negocia." — Bushido</p>
+    <p class="pie-copy">© 2025 Samurai</p>
+  </footer>
+
+  <script src="js/nav.js"></script>
+  <script src="js/scroll.js"></script>
+  <script src="js/carrusel.js"></script>
+  <script src="js/efectos.js"></script>
+</body>
+</html>

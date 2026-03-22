@@ -1,0 +1,11 @@
+:root {
+  --bg:      #06040a;
+  --bg2:     #0d0a12;
+  --rojo:    #cc2200;
+  --oro:     #c8922a;
+  --blanco:  #f0e8dc;
+  --gris:    #5a4a42;
+  --borde:   rgba(200,146,42,0.15);
+  --display: 'Cinzel', serif;
+  --texto:   'Crimson Text', serif;
+}

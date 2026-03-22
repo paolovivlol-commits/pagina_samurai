@@ -1,0 +1,42 @@
+footer {
+  padding: 70px 52px;
+  text-align: center;
+  border-top: 1px solid var(--borde);
+  position: relative;
+  overflow: hidden;
+}
+
+footer::before {
+  content: '侍';
+  position: absolute;
+  font-family: var(--display);
+  font-size: 300px;
+  color: rgba(200,146,42,0.03);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.pie-logo {
+  font-family: var(--display);
+  font-size: 64px;
+  color: rgba(200,146,42,0.18);
+  margin-bottom: 20px;
+  line-height: 1;
+}
+
+.pie-frase {
+  font-family: var(--texto);
+  font-size: 18px;
+  font-style: italic;
+  color: var(--gris);
+  margin-bottom: 16px;
+}
+
+.pie-copy {
+  font-family: monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: rgba(90,74,66,0.35);
+  text-transform: uppercase;
+}
