@@ -120,7 +120,21 @@
 }
 
 @media (max-width: 768px) {
-  .texto-hero { padding: 100px 24px 0; }
-  .linea-lateral { display: none; }
-  .icono-katana { display: none; }
+  .texto-hero {
+    padding: 100px 28px 0;
+  }
+
+  .titulo-hero {
+    font-size: clamp(44px, 16vw, 72px);
+  }
+
+  .desc {
+    font-size: 15px;
+    max-width: 100%;
+  }
+
+  .subtitulo {
+    font-size: 10px;
+  }
+}
 }
