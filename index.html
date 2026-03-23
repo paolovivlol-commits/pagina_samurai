@@ -71,6 +71,20 @@
       tra.style.left = touch.clientX + 'px';
       tra.style.top = touch.clientY + 'px';
     });
+
+    // oculta el cursor cuando se abre el menu hamburguesa
+    const hamburguesa = document.querySelector('.hamburguesa');
+    if (hamburguesa) {
+      hamburguesa.addEventListener('click', function() {
+        if (hamburguesa.classList.contains('abierto')) {
+          cur.style.display = 'none';
+          tra.style.display = 'none';
+        } else {
+          cur.style.display = 'block';
+          tra.style.display = 'block';
+        }
+      });
+    }
   </script>
 
   <!-- nav -->
