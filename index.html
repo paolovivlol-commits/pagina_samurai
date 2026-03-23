@@ -71,14 +71,13 @@
     }
 
     document.addEventListener('touchmove', function(e) {
-      e.preventDefault();
       touchX = e.touches[0].clientX;
       touchY = e.touches[0].clientY;
       if (!animando) {
         animando = true;
         requestAnimationFrame(moverCursorTouch);
       }
-    }, { passive: false });
+    });
 
     document.addEventListener('touchstart', function(e) {
       touchX = e.touches[0].clientX;
