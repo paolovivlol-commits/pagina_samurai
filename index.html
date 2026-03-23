@@ -55,6 +55,22 @@
       tra.style.left = e.clientX + 'px';
       tra.style.top = e.clientY + 'px';
     });
+
+    document.addEventListener('touchmove', function(e) {
+      const touch = e.touches[0];
+      cur.style.left = touch.clientX + 'px';
+      cur.style.top = touch.clientY + 'px';
+      tra.style.left = touch.clientX + 'px';
+      tra.style.top = touch.clientY + 'px';
+    });
+
+    document.addEventListener('touchstart', function(e) {
+      const touch = e.touches[0];
+      cur.style.left = touch.clientX + 'px';
+      cur.style.top = touch.clientY + 'px';
+      tra.style.left = touch.clientX + 'px';
+      tra.style.top = touch.clientY + 'px';
+    });
   </script>
 
   <!-- nav -->
