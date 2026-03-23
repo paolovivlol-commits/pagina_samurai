@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="css/secciones.css">
   <link rel="stylesheet" href="css/footer.css">
   <style>
-  
+    /* cursor inline para que funcione en github pages */
     body { cursor: none !important; }
     #cursor {
       position: fixed;
@@ -49,6 +49,8 @@
   <script>
     const cur = document.getElementById('cursor');
     const tra = document.getElementById('cursor-trail');
+
+    // mouse en desktop
     document.addEventListener('mousemove', function(e) {
       cur.style.left = e.clientX + 'px';
       cur.style.top = e.clientY + 'px';
@@ -56,20 +58,40 @@
       tra.style.top = e.clientY + 'px';
     });
 
+    // touch en movil - fluido con requestAnimationFrame
+    let touchX = 0, touchY = 0;
+    let animando = false;
+
+    function moverCursorTouch() {
+      cur.style.left = touchX + 'px';
+      cur.style.top = touchY + 'px';
+      tra.style.left = touchX + 'px';
+      tra.style.top = touchY + 'px';
+      animando = false;
+    }
+
     document.addEventListener('touchmove', function(e) {
-      const touch = e.touches[0];
-      cur.style.left = touch.clientX + 'px';
-      cur.style.top = touch.clientY + 'px';
-      tra.style.left = touch.clientX + 'px';
-      tra.style.top = touch.clientY + 'px';
-    });
+      e.preventDefault();
+      touchX = e.touches[0].clientX;
+      touchY = e.touches[0].clientY;
+      if (!animando) {
+        animando = true;
+        requestAnimationFrame(moverCursorTouch);
+      }
+    }, { passive: false });
 
     document.addEventListener('touchstart', function(e) {
-      const touch = e.touches[0];
-      cur.style.left = touch.clientX + 'px';
-      cur.style.top = touch.clientY + 'px';
-      tra.style.left = touch.clientX + 'px';
-      tra.style.top = touch.clientY + 'px';
+      touchX = e.touches[0].clientX;
+      touchY = e.touches[0].clientY;
+      cur.style.left = touchX + 'px';
+      cur.style.top = touchY + 'px';
+      tra.style.left = touchX + 'px';
+      tra.style.top = touchY + 'px';
+      cur.style.transform = 'translate(-50%, -50%) scale(2)';
+    });
+
+    document.addEventListener('touchend', function() {
+      cur.style.transform = 'translate(-50%, -50%) scale(1)';
     });
 
     // oculta el cursor cuando se abre el menu hamburguesa
