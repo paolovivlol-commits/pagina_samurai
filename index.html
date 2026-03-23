@@ -13,10 +13,49 @@
   <link rel="stylesheet" href="css/hero.css">
   <link rel="stylesheet" href="css/secciones.css">
   <link rel="stylesheet" href="css/footer.css">
+  <style>
+    /* cursor inline para que funcione en github pages */
+    body { cursor: none !important; }
+    #cursor {
+      position: fixed;
+      width: 10px; height: 10px;
+      background: #cc2200;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 99999;
+      top: 0; left: 0;
+      transform: translate(-50%, -50%);
+      transition: transform 0.15s;
+    }
+    #cursor-trail {
+      position: fixed;
+      width: 28px; height: 28px;
+      border: 1px solid rgba(204,34,0,0.5);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 99998;
+      top: 0; left: 0;
+      transform: translate(-50%, -50%);
+      transition: left 0.1s ease, top 0.1s ease;
+    }
+  </style>
 </head>
 <body>
 
-  
+  <div id="cursor"></div>
+  <div id="cursor-trail"></div>
+
+  <!-- script del cursor lo mas arriba posible -->
+  <script>
+    const cur = document.getElementById('cursor');
+    const tra = document.getElementById('cursor-trail');
+    document.addEventListener('mousemove', function(e) {
+      cur.style.left = e.clientX + 'px';
+      cur.style.top = e.clientY + 'px';
+      tra.style.left = e.clientX + 'px';
+      tra.style.top = e.clientY + 'px';
+    });
+  </script>
 
   <!-- nav -->
   <nav id="nav">
@@ -48,9 +87,8 @@
       <p class="desc">Desde el Japón feudal hasta hoy, el código del samurai sigue siendo la guía de los que no se rinden.</p>
     </div>
     <div class="bajar">↓ scroll</div>
-    <!-- icono svg katana decorativo -->
-    <img src="assets/katana.svg" alt="" class="icono-katana">
     <div class="linea-lateral"></div>
+    <img src="assets/katana.svg" alt="" class="icono-katana">
   </section>
 
   <!-- samurai a caballo -->
@@ -74,48 +112,32 @@
   <section id="katanas">
     <p class="etiqueta centrado">// las katanas</p>
     <h2 class="titulo-seccion centrado">ELIGE TU<br><span>ELEMENTO</span></h2>
-
     <div class="carrusel-wrap">
       <button class="btn-nav btn-prev" onclick="moverCarrusel(-1)">&#8592;</button>
-
       <div class="carrusel">
         <div class="slide activo" data-color="#ff4400">
           <div class="slide-glow" style="background: radial-gradient(circle, rgba(255,80,0,0.3) 0%, transparent 70%)"></div>
           <img src="assets/ktnfuego.png" alt="katana de fuego">
-          <div class="slide-info">
-            <h3>Katana de Fuego</h3>
-            <p>Forjada en las llamas del infierno. Quema todo lo que toca.</p>
-          </div>
+          <div class="slide-info"><h3>Katana de Fuego</h3><p>Forjada en las llamas del infierno. Quema todo lo que toca.</p></div>
         </div>
         <div class="slide" data-color="#0088ff">
           <div class="slide-glow" style="background: radial-gradient(circle, rgba(0,136,255,0.3) 0%, transparent 70%)"></div>
           <img src="assets/kntagua.png" alt="katana de agua">
-          <div class="slide-info">
-            <h3>Katana de Agua</h3>
-            <p>Fluye como el río pero corta como el océano en tormenta.</p>
-          </div>
+          <div class="slide-info"><h3>Katana de Agua</h3><p>Fluye como el río pero corta como el océano en tormenta.</p></div>
         </div>
         <div class="slide" data-color="#00ccff">
           <div class="slide-glow" style="background: radial-gradient(circle, rgba(0,200,255,0.3) 0%, transparent 70%)"></div>
           <img src="assets/ktnhielo.png" alt="katana de hielo">
-          <div class="slide-info">
-            <h3>Katana de Hielo</h3>
-            <p>Congela la sangre del enemigo con un solo roce.</p>
-          </div>
+          <div class="slide-info"><h3>Katana de Hielo</h3><p>Congela la sangre del enemigo con un solo roce.</p></div>
         </div>
         <div class="slide" data-color="#44ff00">
           <div class="slide-glow" style="background: radial-gradient(circle, rgba(80,255,0,0.3) 0%, transparent 70%)"></div>
           <img src="assets/ktnacido.png" alt="katana de acido">
-          <div class="slide-info">
-            <h3>Katana de Ácido</h3>
-            <p>Corroe todo lo que toca. No hay armadura que la detenga.</p>
-          </div>
+          <div class="slide-info"><h3>Katana de Ácido</h3><p>Corroe todo lo que toca. No hay armadura que la detenga.</p></div>
         </div>
       </div>
-
       <button class="btn-nav btn-next" onclick="moverCarrusel(1)">&#8594;</button>
     </div>
-
     <div class="puntos">
       <span class="punto activo" onclick="irA(0)"></span>
       <span class="punto" onclick="irA(1)"></span>
