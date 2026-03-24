@@ -91,6 +91,15 @@
 
     document.addEventListener('touchend', function() {
       cur.style.transform = 'translate(-50%, -50%) scale(1)';
+      // oculta el cursor al soltar el dedo
+      cur.style.opacity = '0';
+      tra.style.opacity = '0';
+    });
+
+    document.addEventListener('touchstart', function() {
+      // muestra el cursor al tocar
+      cur.style.opacity = '1';
+      tra.style.opacity = '1';
     });
 
     // oculta el cursor cuando se abre el menu hamburguesa
